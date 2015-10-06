@@ -2,7 +2,7 @@
     'use strict';
 
     /* global JS_BASICS,test,equal,module,start,stop,window,$ */
-
+  /*wzeeeeeeeeeesh*/
 
     module('Test "JSBAsics" module');
 
