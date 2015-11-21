@@ -29,12 +29,13 @@
         equal(JS_BASICS.longestString(['Holà','\u265E','你好']),'Holà','utf-8...');
         equal(JS_BASICS.longestString(['Holà','\u265E','你好']),'Holà','utf-8...');
         equal(JS_BASICS.longestString([true,false,'lol']),'lol','various types');
-        equal(JS_BASICS.longestString([{object: true,mainly: 'to confuse you'},'x']),'lol','various types');
+        equal(JS_BASICS.longestString([{object: true,mainly: 'to confuse you'},'lol']),'lol','various types');
     });
 
     test('test reverseString', function() {
         equal(JS_BASICS.reverseString('Hello World!'), '!dlroW olleH', 'reverse chars in a string');
         equal(JS_BASICS.reverseString('   abc'), 'cba   ', 'reverse chars in a string');
+        equal(JS_BASICS.reverseString('rats live on no evil star'), 'rats live on no evil star', 'reverse chars in a string');
     });
 
     test('test isPalindrome', function() {
