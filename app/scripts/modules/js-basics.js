@@ -76,7 +76,7 @@
     JS_BASICS.isPalindrome = function(str) {
         // str will be an string
         // Return true if it is a palindrome and false otherwise. It should be case insensitive and not consider space or punctuation.
-        var tab=JS_BASICS.reverseString(str);
+       /* var tab=JS_BASICS.reverseString(str);
         var tab2 =tab.toLowerCase();
 
         if (tab2.localeCompare(str.toLowerCase()) ==0)
@@ -85,13 +85,29 @@
         }
         else {
           return false;
-        }
+        }*/
+	 str = str.toUpperCase();
+		str = str.replace(/ /g,"");
+		var len = str.length;
+		for ( var i = 0; i < Math.floor(len/2); i++ ) {
+		    if (str[i] !== str[len - 1 - i]) {
+		        return false;
+		    }
+		}
+		return true;
 
     };
 
     JS_BASICS.nestedSum = function(arr) {
-        // arr will be an array, containing integers, strings and/or arrays like itself
-        // Return the sum all the numbers you find, anywhere in the nest of arrays.
+         var somme = 0;
+        for(var cpt = 0; cpt < arr.length; cpt++)
+            if(Array.isArray(arr[cpt]))
+                somme += JS_BASICS.nestedSum(arr[cpt]);
+            else if(typeof arr[cpt] === "number")
+                somme += arr[cpt];
+
+        return somme;
+    
     };
 
     global.JS_BASICS = JS_BASICS;
